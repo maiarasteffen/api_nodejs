@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const app = express()
 
 const Person = require('./models/Person')
+const Address = require('./models/Address')
 
 // Forma de ler JSON / middlewares
 app.use(
@@ -17,10 +18,12 @@ app.use(express.json())
 
 //Rota da API
 const personRoutes = require('./routes/routesPerson')
+const addressRoutes = require('./routes/routesAddress')
 
 app.use('/person', personRoutes)
-// Rota inicial / endpoint
+app.use('/address', addressRoutes)
 
+// Rota inicial / endpoint
 app.get('/', (req, res) => {
     //Mostrar requisição
 
