@@ -15,6 +15,7 @@ app.use(
 )
 
 app.use(express.json())
+app.use(express.static('public'))
 
 //Rota da API
 const personRoutes = require('./routes/routesPerson')
